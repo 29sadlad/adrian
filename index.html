@@ -2,11 +2,15 @@
     <head>
         <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
 
-  <meta charset="utf-8">
-  <title>A-Frame with Countdown and Background Music</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
+
+        <meta charset="utf-8">
+        <title>A-Frame with Countdown and Background Music</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+        <style>
       body { margin: 0; overflow: hidden; }
 
       #start-button {
@@ -38,18 +42,26 @@
     </style>
 
         
-        
+
     </head>
 
     <body>
 
-        
+
+
+          <!-- Audio element -->
+    <audio id="bg-music" loop>
+      <source src="https://github.com/29sadlad/adrian/raw/refs/heads/main/songintrumentalREAL.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- UI elements -->
+    <button id="start-button">Start Experience</button>
+    <div id="countdown">3</div>
+
+
         
         <a-scene>
-
-
-
-            
             <a-plane
             position="0 0 -4" rotation="-90 0 0" width="100" height="100" 
             src="https://tse2.mm.bing.net/th/id/OIP.vKOIPo0FromAh9uwZ0hqaAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3">
@@ -80,26 +92,6 @@
                 "
                 >
                   </a-sphere>
-
-
-  <!-- Audio element -->
-    <audio id="bg-music" loop>
-      <source src="https://codehs.com/uploads/b3bd8455c54becc25c22d62cf812e8cf" type="audio/mpeg">
-      </audio>
-
-
-
-
-
-
-
-            
-    <!-- UI elements -->
-    <button id="start-button">Start Experience</button>
-    <div id="countdown">3</div>
-
-
-            
                   
                   <a-box position="4 1.4 -5" depth="2" height="2" width="2" src="https://th.bing.com/th/id/R.7af163ff2fa6dd7121998b8dd596d5ad?rik=f1P3vBUsahq7WQ&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f130000%2fvelka%2fcarbon-metallic-backing-paper.jpg&ehk=VbDgIsbslkLpCnry4%2fZDz%2fJEKM0Pn7LIXTakjmrrZUA%3d&risl=&pid=ImgRaw&r=0"
                 animation="
@@ -219,41 +211,9 @@
             
         </a-scene>
 
- 
-
-  <!-- JavaScript -->
-    <script>
-      const music = document.getElementById('bg-music');
-      const startBtn = document.getElementById('start-button');
-      const countdownEl = document.getElementById('countdown');
-
-      startBtn.addEventListener('click', () => {
-        startBtn.style.display = 'none';
-        startCountdown();
-      });
-
-      function startCountdown() {
-        let count = 5;
-        countdownEl.style.display = 'block';
-        countdownEl.textContent = count;
-
-        const interval = setInterval(() => {
-          count--;
-          if (count > 0) {
-            countdownEl.textContent = count;
-          } else {
-            clearInterval(interval);
-            countdownEl.style.display = 'none';
-            music.play();
-          }
-        }, 1000);
-      }
-    </script>
 
 
-    </script>
-
-         <!-- JavaScript -->
+        <!-- JavaScript -->
     <script>
       const music = document.getElementById('bg-music');
       const startBtn = document.getElementById('start-button');
@@ -280,6 +240,10 @@
           }
         }, 1000);
       }
+    </script>
+
+
         
     </body>
+</html>
 </html>
